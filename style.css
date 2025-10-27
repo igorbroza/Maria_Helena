@@ -275,6 +275,23 @@ footer {
     padding: 10px;
 }
 
+/* 1. Defina o estado inicial dos seus elementos */
+/* Eles começarão invisíveis e um pouco para baixo */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px); /* Começa 30px abaixo da posição final */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform; /* Otimização para o navegador */
+}
+
+/* 2. Defina o estado final (quando o item estiver visível) */
+/* Esta classe será adicionada pelo JavaScript */
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0); /* Volta à posição original */
+}
+
+
 /* Estilos para telas menores (Responsivo) */
 @media (max-width: 767px) {
   .text-content {
