@@ -7,6 +7,21 @@
   }
 
 
+.lista{
+  color: var(--azul-principal);
+  font-size: 1.3rem;
+}
+
+
+.logoAluno{
+  background-color: var(--azul-principal);
+  width: 100%;
+  padding: 50px;
+  border-radius: 16px;
+}
+
+
+
 /* Plataformas */
 .platforms {
     display: grid;
