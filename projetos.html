@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colégio Maria Helena</title>
+  <title>Projetos | Colégio Maria Helena</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="styles/projetos.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
 </head>
 <body>
@@ -42,50 +46,66 @@
     </div>
   </nav>
 
-  <div style="text-align: center; padding: 50px 20px;">
-    <h2 class="title">Projetos do Colégio Maria Helena</h2>
-    <p style="font-size: 18px; color: #555; max-width: 800px; margin: 20px auto;">
-      No Colégio Maria Helena Teixeira Luciano, acreditamos que aprender vai muito além da sala de aula.
-      Nossos projetos incentivam o crescimento pessoal, acadêmico e cultural dos alunos, com iniciativas como
-      o <strong class="title">projeto SAEB</strong> e o programa <strong class="title">Ganhando o Mundo</strong>.
-    </p>
-  </div>
+  <main class="container my-5">
+    <h1 class="section-title mb-5 title">Nossos Projetos</h1>
 
-  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; padding: 20px;">
-
-    <div style="background-color: white; width: 280px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; text-align: center;">
-      <img src="img/saeb.JPG" alt="Projeto SAEB" style="width: 100%; height: 180px; object-fit: cover;">
-      <div style="padding: 20px;">
-        <h3 class="title">Projeto SAEB</h3>
-        <p style="color: #666; font-size: 16px;">
-          O projeto SAEB incentiva o aprendizado e a preparação dos alunos para as avaliações nacionais, fortalecendo o ensino e melhorando os resultados escolares.
-        </p>
+    <div class="projeto-card-container row align-items-stretch shadow-sm">
+      <div class="col-md-7 order-md-1">
+        <h2 class="title">Projeto Voleibol</h2>
+        <p>Uma iniciativa para incentivar o esporte, o trabalho em equipe e a saúde entre os alunos. O projeto é focado no desenvolvimento de habilidades e na integração social através do vôlei.</p>
+        <div class="projeto-horario">
+          <div><i class="fas fa-calendar-alt"></i> <strong>Dias:</strong> Segundas e Quartas</div>
+          <div><i class="fas fa-clock"></i> <strong>Horário:</strong> 17:30 - 19:00</div>
+        </div>
+      </div>
+      <div class="col-md-5 order-md-2 p-0">
+        <img src="img/quadra2.jpg" alt="Projeto Voleibol">
       </div>
     </div>
 
-    <div style="background-color: white; width: 280px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; text-align: center;">
-      <img src="img/Meninasganhandoomundo.png" alt="Ganhando o Mundo" style="width: 100%; height: 180px; object-fit: cover;">
-      <div style="padding: 20px;">
-        <h3 class="title">Ganhando o Mundo</h3>
-        <p style="color: #666; font-size: 16px;">
-          O programa de intercâmbio Ganhando o Mundo proporciona aos alunos experiências únicas no exterior, ampliando horizontes e vivências culturais.
-        </p>
+    <div class="projeto-card-container row align-items-stretch shadow-sm">
+      <div class="col-md-7 order-md-1">
+        <h2 class="title">Grupo de Ciências</h2>
+        <p>Um espaço para exploração científica, experimentos práticos e preparação para feiras de ciências. O objetivo é despertar a curiosidade e o espírito pesquisador dos estudantes.</p>
+        <div class="projeto-horario">
+          <div><i class="fas fa-calendar-alt"></i> <strong>Dias:</strong> Terças-feiras (Quinzenal)</div>
+          <div><i class="fas fa-clock"></i> <strong>Horário:</strong> 14:00 - 16:00 (A confirmar)</div>
+        </div>
+      </div>
+      <div class="col-md-5 order-md-2 p-0">
+        <img src="img/laboratorio.de.quimica.jpeg" alt="Grupo de Ciências">
       </div>
     </div>
 
-    <div style="background-color: white; width: 280px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; text-align: center;">
-      <img src="img/IMG_5281.jpeg" alt="Outros Projetos" style="width: 100%; height: 180px; object-fit: cover;">
-      <div style="padding: 20px;">
-        <h3 class="title">Outros Projetos</h3>
-        <p style="color: #666; font-size: 16px;">
-          Além desses, o colégio desenvolve diversos projetos que incentivam o protagonismo estudantil, o trabalho em equipe e a cidadania.
-        </p>
+    <div class="projeto-card-container row align-items-stretch shadow-sm">
+      <div class="col-md-7 order-md-1">
+        <h2 class="title">Ganhando o Mundo</h2>
+        <p>O programa de intercâmbio Ganhando o Mundo, do Governo do Estado, proporciona aos alunos da rede pública experiências únicas no exterior, ampliando horizontes e vivências culturais.</p>
+        <div class="projeto-horario">
+          <div><i class="fas fa-calendar-alt"></i> <strong>Inscrições:</strong> Anuais (Verificar edital)</div>
+          <div><i class="fas fa-clock"></i> <strong>Formato:</strong> Acompanhamento pedagógico e intercâmbio.</div>
+        </div>
+      </div>
+      <div class="col-md-5 order-md-2 p-0">
+        <img src="img/Meninasganhandoomundo.png" alt="Ganhando o Mundo">
       </div>
     </div>
 
-  </div>
-  
+    <div class="projeto-card-container row align-items-stretch shadow-sm">
+      <div class="col-md-7 order-md-1">
+        <h2 class="title">Projeto SAEB</h2>
+        <p>O projeto SAEB incentiva o aprendizado focado e a preparação dos alunos para as avaliações nacionais (Sistema de Avaliação da Educação Básica), fortalecendo o ensino e melhorando os resultados.</p>
+        <div class="projeto-horario">
+          <div><i class="fas fa-calendar-alt"></i> <strong>Dias:</strong> Contínuo (Aulas de reforço)</div>
+          <div><i class="fas fa-clock"></i> <strong>Horário:</strong> Durante o período letivo</div>
+        </div>
+      </div>
+      <div class="col-md-5 order-md-2 p-0">
+        <img src="img/saeb.JPG" alt="Projeto SAEB">
+      </div>
+    </div>
 
+  </main>
   <footer>
     <div class="container">
         <div class="footer-content">

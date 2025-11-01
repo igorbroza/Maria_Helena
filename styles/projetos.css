@@ -1,0 +1,75 @@
+:root {
+    --azul-principal: #4047c6;
+    --azul-secundario: #2a5ca0;
+    --azul-claro: #e8f0fe;
+    --branco: #ffffff;
+    --cinza-claro: #f5f5f5;
+  }
+  
+  .projeto-card-container {
+    background-color: var(--branco);
+    border-radius: 12px;
+    /* Garante que a imagem dentro não 'vaze' do canto arredondado */
+    overflow: hidden; 
+    margin-bottom: 2.5rem;
+    border: 3px solid var(--azul-principal);
+    transition: transform 0.3s;
+  }
+  
+  .projeto-card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Adiciona um preenchimento à coluna de texto */
+  .projeto-card-container .col-md-7 {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Estilo da Imagem */
+  .projeto-card-container img {
+    width: 100%;
+    height: 350px; /* Altura fixa para todos os cards */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  }
+  
+  /* Estilo da seção de horário */
+  .projeto-horario {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--cinza-claro);
+    color: var(--azul-secundario);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  /* Estilo dos ícones */
+  .projeto-horario i {
+    margin-right: 10px;
+    color: var(--azul-principal);
+    width: 20px; /* Alinha os ícones */
+    text-align: center;
+  }
+  
+  /* --- Responsivo para Celular (menos de 767px) --- */
+  @media (max-width: 767px) {
+    .projeto-card-container img {
+      height: 220px; /* Altura menor no mobile */
+    }
+  
+    /* No mobile, força a imagem a ficar em cima (ordem 1) */
+    .projeto-card-container .order-md-2 {
+      order: 1 !important;
+    }
+    /* E o texto fica embaixo (ordem 2) */
+    .projeto-card-container .order-md-1 {
+      order: 2 !important;
+    }
+  
+    .projeto-card-container .col-md-7 {
+      padding: 1.5rem;
+    }
+  }
