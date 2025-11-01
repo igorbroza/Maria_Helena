@@ -46,3 +46,69 @@
     padding: 10px;
     color: var(--azul-principal);
 }
+
+/* --- Galeria dos Diretores --- */
+.diretores-galeria {
+  display: grid;
+  /* MODIFICADO: Força 3 colunas na linha */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; /* Espaçamento entre os cards */
+  justify-items: center; /* Centraliza os cards no grid */
+  padding: 20px 0;
+}
+
+.diretor-card {
+  text-align: center;
+  max-width: 180px; /* Largura máxima do card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diretor-card img {
+  width: 200px;  /* Largura da imagem */
+  height: 260px; /* Altura da imagem (maior que a largura) */
+  border-radius: 50%; /* Faz a mágica do oval */
+  object-fit: cover; /* Garante que a foto preencha o oval */
+  border: 4px solid var(--azul-secundario); /* Borda na cor do tema */
+  background-color: #e0e0e0; /* Cor de fundo caso a imagem falhe */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px; /* Espaço entre a foto e o nome */
+}
+
+.diretor-nome {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--azul-principal);
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.diretor-mandato {
+  font-size: 0.9rem;
+  color: #333; /* Cor mais escura para o texto do mandato */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 767px) {
+  .testeHistoria {
+    flex-direction: column;
+  }
+
+  .card_galeria img {
+    width: 100%;
+    max-width: 400px; /* Garante que não fique largo demais */
+    height: auto; /* Altura automática para manter proporção */
+  }
+
+  .diretores-galeria {
+    /* MODIFICADO: Faz 2 colunas em telas menores */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .diretor-card img {
+    width: 100px;
+    height: 133px; /* Mantém a proporção 3:4 */
+  }
+}

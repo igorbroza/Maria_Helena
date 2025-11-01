@@ -1,0 +1,30 @@
+.curso-section img, .curso-section .curso-icon {
+    width: 100%;
+    height: 270px; /* Altura padronizada */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .curso-section {
+    margin-bottom: 2.5rem; /* Espaço entre cursos */
+  }
+  /* Adiciona uma borda e mais espaço entre as categorias de cursos */
+  .categoria-cursos {
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--azul-claro);
+  }
+  .categoria-cursos:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .curso-icon {
+    font-size: 8rem;
+    color: var(--azul-principal);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: var(--cinza-claro);
+  }
