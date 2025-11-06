@@ -1,114 +1,152 @@
 :root {
-    --azul-principal: #4047c6;
-    --azul-secundario: #2a5ca0;
-    --azul-claro: #e8f0fe;
-    --branco: #ffffff;
-    --cinza-claro: #f5f5f5;
-  }
+  --azul-principal: #4047c6;
+  --azul-secundario: #2a5ca0;
+  --azul-claro: #e8f0fe;
+  --branco: #ffffff;
+  --cinza-claro: #f5f5f5;
+}
 
 .texto_historia{
-    text-align: justify;
-    color: black;
-    font-size: 1.5rem;
+  text-align: justify;
+  color: black;
+  font-size: 1.5rem;
 }
 
 .title_historia{
-    font-size: 3rem;
-    color: var(--azul-principal);
+  font-size: 3rem;
+  color: var(--azul-principal);
 }
 
 .container_historia{
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .testeHistoria{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 
 .card_galeria{
-    margin: 30px;
-    border-radius: 16px;
-    border: 4px var(--azul-secundario) solid;
+  margin: 30px;
+  border-radius: 16px;
+  border: 4px var(--azul-secundario) solid;
 }
 
 .card_galeria img {
-    width: 400px;
-    height: 300px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+  width: 400px;
+  height: 300px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .titulo_imagem{
-    padding: 10px;
-    color: var(--azul-principal);
+  padding: 10px;
+  color: var(--azul-principal);
 }
 
 /* --- Galeria dos Diretores --- */
 .diretores-galeria {
-  display: grid;
-  /* MODIFICADO: Força 3 colunas na linha */
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px; /* Espaçamento entre os cards */
-  justify-items: center; /* Centraliza os cards no grid */
-  padding: 20px 0;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 30px;
+justify-items: center;
+padding: 20px 0;
 }
 
 .diretor-card {
-  text-align: center;
-  max-width: 180px; /* Largura máxima do card */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+text-align: center;
+max-width: 180px;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .diretor-card img {
-  width: 200px;  /* Largura da imagem */
-  height: 260px; /* Altura da imagem (maior que a largura) */
-  border-radius: 50%; /* Faz a mágica do oval */
-  object-fit: cover; /* Garante que a foto preencha o oval */
-  border: 4px solid var(--azul-secundario); /* Borda na cor do tema */
-  background-color: #e0e0e0; /* Cor de fundo caso a imagem falhe */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 15px; /* Espaço entre a foto e o nome */
+width: 200px;
+height: 260px;
+border-radius: 50%;
+object-fit: cover;
+border: 4px solid var(--azul-secundario);
+background-color: #e0e0e0;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin-bottom: 15px;
 }
 
 .diretor-nome {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--azul-principal);
-  margin-bottom: 5px;
-  line-height: 1.3;
+font-size: 1.1rem;
+font-weight: 600;
+color: var(--azul-principal);
+margin-bottom: 5px;
+line-height: 1.3;
 }
 
 .diretor-mandato {
-  font-size: 0.9rem;
-  color: #333; /* Cor mais escura para o texto do mandato */
+font-size: 0.9rem;
+color: #333;
 }
 
-/* Ajuste para telas menores */
+/* ==================================================
+ADIÇÕES PARA RESPONSIVIDADE
+==================================================
+*/
+
+/* Ajuste para telas menores (Tablets) */
+@media (max-width: 991px) {
+.title_historia {
+  font-size: 2rem; /* Reduz fonte */
+}
+.texto_historia {
+  font-size: 1.2rem; /* Reduz fonte */
+}
+}
+
+
+/* Ajuste para telas menores (Celulares) */
 @media (max-width: 767px) {
-  .testeHistoria {
-    flex-direction: column;
-  }
+.testeHistoria {
+  flex-direction: column;
+}
 
-  .card_galeria img {
-    width: 100%;
-    max-width: 400px; /* Garante que não fique largo demais */
-    height: auto; /* Altura automática para manter proporção */
-  }
+.card_galeria {
+  margin: 15px 0; /* Reduz margem */
+}
 
-  .diretores-galeria {
-    /* MODIFICADO: Faz 2 colunas em telas menores */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+.card_galeria img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
 
-  .diretor-card img {
-    width: 100px;
-    height: 133px; /* Mantém a proporção 3:4 */
-  }
+.diretores-galeria {
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  gap: 20px;
+}
+
+.diretor-card img {
+  width: 100px;
+  height: 133px;
+}
+
+/* Redução drástica de fontes para mobile */
+.title_historia {
+  font-size: 1.8rem;
+  text-align: center !important; /* Força centralização */
+}
+.texto_historia {
+  font-size: 1rem;
+}
+}
+
+/* Telas muito pequenas */
+@media (max-width: 480px) {
+.diretores-galeria {
+  grid-template-columns: 1fr; /* 1 coluna */
+}
+.diretor-card img {
+  width: 120px;
+  height: 160px;
+}
 }

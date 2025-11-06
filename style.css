@@ -16,18 +16,19 @@
 
 
 html, body {
-  height: 100%; /* Garante que o html e o body ocupem a altura total */
+  height: 100%;
   margin: 0;
+  overflow-x: hidden; /* Impede a rolagem horizontal */
 }
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Garante que o body tenha pelo menos a altura da janela de visualização */
+  min-height: 100vh;
 }
 
 main {
-  flex-grow: 1; /* Faz o main ocupar todo o espaço disponível, empurrando o footer para baixo */
+  flex-grow: 1;
 }
 
 
@@ -49,12 +50,8 @@ main {
   background-color: #4047c6;
 }
 
-/* Faz o menu dropdown abrir ao passar o mouse (hover) 
-  em vez de esperar por um clique.
-*/
 .dropdown:hover > .dropdown-menu {
   display: block;
-  
 }
 
 .texto-inicio{
@@ -80,6 +77,7 @@ main {
   margin-bottom: 40px;
   color: var(--azul-principal);
   position: relative;
+  font-size: 2.2rem; /* Tamanho base */
 }
 
 .section-title:after {
@@ -149,13 +147,15 @@ main {
   color: var(--azul-principal);
   text-align: center;
   padding: 10px 0px 0px 0px;
+  font-size: 1.1rem; /* Ajuste de fonte */
 }
 
 /* --- Seção Sobre --- */
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  /* Auto-fit é ótimo para responsividade, mas vamos ajustar o minmax */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
   margin-top: 48px;
 }
@@ -207,8 +207,10 @@ main {
   border: 1px solid #ddd;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   transition: 0.4s;
-  flex: 1;
-  width: 300px;
+  flex-basis: 300px; /* Base de largura */
+  flex-grow: 1;      /* Permite crescer */
+  min-width: 280px;   /* Largura mínima */
+  max-width: 300px;
   height: 400px;
   cursor: pointer;
 }
@@ -238,7 +240,7 @@ main {
 
 .image-container {
   position: relative;
-  min-height: 450px; /* Garante altura para a imagem */
+  min-height: 450px;
 }
 
 .diagonal-image {
@@ -247,7 +249,6 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  /* A mágica acontece aqui! */
   clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
   overflow: hidden;
   border-radius: 12px;
@@ -259,8 +260,6 @@ main {
   object-fit: cover;
   object-position: center;
 }
-
-
 
 /* --- FIM DOS ESTILOS DA NOVA SEÇÃO --- */
 
@@ -300,8 +299,10 @@ footer {
 
 
 .footer-section {
-  flex: 0 0 30%;
+  flex: 1; /* Permite que cresçam igualmente */
+  min-width: 300px; /* Garante que não fiquem muito espremidos */
   margin-bottom: 20px;
+  padding: 0 15px; /* Adiciona espaçamento lateral */
 }
 
 
@@ -327,35 +328,95 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-
-/* 1. Defina o estado inicial dos seus elementos */
-/* Eles começarão invisíveis e um pouco para baixo */
+/* --- Animação --- */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(30px); /* Começa 30px abaixo da posição final */
+  transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  will-change: opacity, transform; /* Otimização para o navegador */
+  will-change: opacity, transform;
 }
 
-/* 2. Defina o estado final (quando o item estiver visível) */
-/* Esta classe será adicionada pelo JavaScript */
 .animate-on-scroll.is-visible {
   opacity: 1;
-  transform: translateY(0); /* Volta à posição original */
+  transform: translateY(0);
 }
 
+/* --- Seção de Homenagem --- */
 
-/* Estilos para telas menores (Responsivo) */
+#homenagem-turma {
+  background-color: var(--cinza-claro); /* Um fundo suave para destacar a seção */
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.homenagem-imagem-container {
+  width: 100%;
+  max-height: 550px; /* Define uma altura máxima para a imagem */
+  overflow: hidden; /* Garante que a imagem não ultrapasse o container */
+  border-radius: 10px; /* Bordas arredondadas */
+  margin-bottom: 30px; /* Espaço entre a imagem e o texto */
+  border: 6px solid var(--azul-principal); /* Borda na cor do tema */
+}
+
+.homenagem-imagem-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
+  /* MODIFICADO: Ajusta o foco para a parte inferior da imagem */
+  object-position: center bottom; 
+}
+
+.homenagem-texto {
+  max-width: 900px; /* Limita a largura do texto para melhor legibilidade */
+  margin: 0 auto; /* Centraliza o bloco de texto */
+  padding: 0 15px; /* Evita que o texto cole nas laterais em telas pequenas */
+}
+
+/* --- Fim da Seção de Homenagem --- */
+
+/* ==================================================
+  ADIÇÕES PARA RESPONSIVIDADE
+==================================================
+*/
+
+/* --- Telas de Tablet (Médio) --- */
+@media (max-width: 991px) {
+  .texto-inicio {
+    padding-left: 30px; /* Reduz o padding */
+  }
+
+  .galeria {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  }
+
+  .features {
+    grid-template-columns: 1fr; /* 1 coluna */
+    gap: 20px;
+  }
+
+  .feature h3 {
+    font-size: 2rem; /* Reduz fonte */
+  }
+
+  .imagem-main-page {
+    height: 400px; /* Reduz altura */
+  }
+
+  .bold, .texto-secundario {
+    font-size: 1.2rem; /* Reduz fontes */
+  }
+}
+
+/* --- Telas de Celular (Pequeno) --- */
 @media (max-width: 767px) {
-  .text-content {
+  .text-content, .texto-inicio {
+      padding-left: 15px; /* Remove padding lateral */
       padding-right: 15px;
       text-align: center;
       margin-bottom: 30px;
   }
   
   .diagonal-image {
-    /* Remove a diagonal em telas pequenas para melhor visualização */
     clip-path: none; 
     position: relative;
     border-radius: 12px;
@@ -363,5 +424,40 @@ footer {
 
   .image-container {
       min-height: 300px;
+  }
+
+  .section-title {
+    font-size: 1.8rem; /* Reduz título */
+  }
+
+  .bold, .texto-secundario {
+    font-size: 1rem; /* Reduz mais as fontes */
+  }
+
+  .imagem-main-page {
+    height: 300px; /* Altura menor */
+  }
+
+  .galeria {
+    grid-template-columns: 1fr; /* 1 coluna */
+  }
+
+  .card {
+    flex-basis: 100%; /* Ocupa 100% da largura */
+    height: auto; /* Altura automática */
+    padding: 25px;
+  }
+
+  .card h3 {
+    padding-bottom: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column; /* Empilha as seções do footer */
+  }
+
+  .footer-section {
+    min-width: 100%;
+    padding: 0 10px;
   }
 }
