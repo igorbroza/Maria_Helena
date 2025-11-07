@@ -7,6 +7,12 @@
   .curso-section {
     margin-bottom: 2.5rem; /* Espaço entre cursos */
   }
+
+  .texto-curso{
+    text-align: justify;
+    color: black;
+    font-size: 1.5rem;
+  }
   /* Adiciona uma borda e mais espaço entre as categorias de cursos */
   .categoria-cursos {
     padding-bottom: 2rem;
