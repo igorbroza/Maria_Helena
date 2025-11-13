@@ -47,45 +47,58 @@
   color: var(--azul-principal);
 }
 
-/* --- Galeria dos Diretores --- */
+/* --- Galeria dos Diretores (ESTILOS ATUALIZADOS) --- */
 .diretores-galeria {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 30px;
-justify-items: center;
-padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px 0;
+  align-items: stretch; /* Garante que os cards na mesma linha tenham a mesma altura */
 }
 
 .diretor-card {
-text-align: center;
-max-width: 180px;
-display: flex;
-flex-direction: column;
-align-items: center;
+  background-color: var(--branco);
+  border-radius: 12px;
+  border: 3px solid var(--azul-secundario);
+  overflow: hidden; /* Para conter a imagem */
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Ocupa a coluna do grid */
+}
+
+.diretor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.07);
 }
 
 .diretor-card img {
-width: 200px;
-height: 260px;
-border-radius: 50%;
-object-fit: cover;
-border: 4px solid var(--azul-secundario);
-background-color: #e0e0e0;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-margin-bottom: 15px;
+  width: 100%;
+  height: 280px; /* Altura fixa para a imagem */
+  object-fit: cover;
+  object-position: center; /* Foca no rosto */
+}
+
+.diretor-info {
+  padding: 1.5rem;
+  text-align: center;
+  flex-grow: 1; /* Faz o conteúdo de texto crescer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .diretor-nome {
-font-size: 1.1rem;
-font-weight: 600;
-color: var(--azul-principal);
-margin-bottom: 5px;
-line-height: 1.3;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--azul-principal);
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
 
 .diretor-mandato {
-font-size: 0.9rem;
-color: #333;
+  font-size: 1rem;
+  color: #333;
 }
 
 /* ==================================================
@@ -95,58 +108,55 @@ ADIÇÕES PARA RESPONSIVIDADE
 
 /* Ajuste para telas menores (Tablets) */
 @media (max-width: 991px) {
-.title_historia {
-  font-size: 2rem; /* Reduz fonte */
-}
-.texto_historia {
-  font-size: 1.2rem; /* Reduz fonte */
-}
+  .title_historia {
+    font-size: 2rem; /* Reduz fonte */
+  }
+  .texto_historia {
+    font-size: 1.2rem; /* Reduz fonte */
+  }
+  .diretores-galeria {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  }
 }
 
 
 /* Ajuste para telas menores (Celulares) */
 @media (max-width: 767px) {
-.testeHistoria {
-  flex-direction: column;
-}
+  .testeHistoria {
+    flex-direction: column;
+  }
 
-.card_galeria {
-  margin: 15px 0; /* Reduz margem */
-}
+  .card_galeria {
+    margin: 15px 0; /* Reduz margem */
+  }
 
-.card_galeria img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-}
+  .card_galeria img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
 
-.diretores-galeria {
-  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-  gap: 20px;
-}
+  .diretores-galeria {
+    grid-template-columns: 1fr; /* 2 colunas */
+    gap: 20px;
+  }
 
-.diretor-card img {
-  width: 100px;
-  height: 133px;
-}
-
-/* Redução drástica de fontes para mobile */
-.title_historia {
-  font-size: 1.8rem;
-  text-align: center !important; /* Força centralização */
-}
-.texto_historia {
-  font-size: 1rem;
-}
+  /* Redução drástica de fontes para mobile */
+  .title_historia {
+    font-size: 1.8rem;
+    text-align: center !important; /* Força centralização */
+  }
+  .texto_historia {
+    font-size: 1rem;
+  }
 }
 
 /* Telas muito pequenas */
 @media (max-width: 480px) {
-.diretores-galeria {
-  grid-template-columns: 1fr; /* 1 coluna */
-}
-.diretor-card img {
-  width: 120px;
-  height: 160px;
-}
+  .diretores-galeria {
+    grid-template-columns: 1fr; /* 1 coluna */
+  }
+  .diretor-card img {
+     height: 250px; /* Ajusta altura da imagem no mobile */
+  }
 }

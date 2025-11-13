@@ -54,3 +54,117 @@
     height: 100%;
     border: 0;
   }
+
+  /* Estilos para os novos cards de contato */
+.contact-card {
+  background-color: var(--branco);
+  border-radius: 12px;
+  padding: 2.5rem;
+  border: 3px solid var(--azul-principal);
+  height: 100%; /* Garante que os cards tenham a mesma altura */
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card .title {
+  color: var(--azul-principal);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--azul-secundario);
+}
+
+.contact-card ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.2rem; /* Aumentando a fonte para legibilidade */
+  color: #333;
+  flex-grow: 1; /* Faz a lista ocupar o espaço */
+}
+
+.contact-card ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.contact-card ul li i {
+  color: var(--azul-principal);
+  width: 30px; /* Alinha os ícones */
+  text-align: center;
+  margin-right: 10px;
+  margin-top: 5px; /* Alinha o ícone com o texto */
+}
+
+.map-container {
+  border-radius: 12px;
+  overflow: hidden; /* Garante que o mapa fique dentro das bordas */
+  border: 3px solid var(--azul-principal);
+  margin-top: 2.5rem;
+  width: 100%;
+  height: 450px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- Seção Pedagogas --- */
+.pedagoga-card {
+background-color: var(--branco);
+border-radius: 12px;
+border: 3px solid var(--azul-secundario);
+overflow: hidden; /* Para conter a imagem */
+transition: transform 0.3s, box-shadow 0.3s;
+display: flex;
+flex-direction: column;
+}
+
+.pedagoga-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.07);
+}
+
+.pedagoga-card img {
+width: 100%;
+height: 300px; /* Altura fixa para a imagem */
+object-fit: cover;
+object-position: center; /* Foca no rosto */
+}
+
+.pedagoga-info {
+padding: 1.5rem;
+flex-grow: 1; /* Faz o conteúdo de texto crescer */
+}
+
+.pedagoga-nome {
+font-size: 1.5rem;
+font-weight: 600;
+color: var(--azul-principal);
+margin-bottom: 15px;
+}
+
+.pedagoga-detalhes {
+list-style: none;
+padding-left: 0;
+font-size: 1rem;
+color: #333;
+}
+
+.pedagoga-detalhes li {
+display: flex;
+align-items: flex-start;
+margin-bottom: 10px;
+line-height: 1.5;
+}
+
+.pedagoga-detalhes li i {
+color: var(--azul-principal);
+width: 25px;
+text-align: center;
+margin-right: 8px;
+margin-top: 4px;
+}
